@@ -1,0 +1,24 @@
+<div class="board-container">
+
+    <div *ngFor="let item of cellsOfGame; let idx = index" (click)="onGameCellClick(idx)"
+        class="cell"
+        [ngClass]="{
+        'cross': item === 'x',
+        'nought': item === 'o'
+    }">
+        <span>{{ item }}</span>
+    </div>
+
+</div>
+
+
+<div class="result-container" *ngIf="isGameOver">
+
+    <div class="result-text">
+        <span *ngIf="isThereWinner">The winner is: {{ winnerSign }}</span>
+        <span *ngIf="!isThereWinner">No winner, the game is tie !</span>
+    </div>
+
+    <button class="btn-restart" (click)="startAgain()">Star Again !</button>
+
+</div>

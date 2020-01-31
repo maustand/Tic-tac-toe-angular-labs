@@ -1,0 +1,78 @@
+$cell-Size: 150px;
+
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.board-container {
+    display: grid;
+    grid-template-columns: $cell-Size $cell-Size $cell-Size;
+    grid-template-rows: $cell-Size $cell-Size $cell-Size;
+    grid-template-areas: ". . ." ". . ." ". . .";
+    grid-gap: 5px;
+
+    .cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #78bec5;
+        border-radius: 14px;
+        color: #fff;
+        cursor: pointer;
+        
+        span {
+            font-size: 50px; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        &:hover {
+            background:  #a8d7db;
+        }
+
+        &.cross {
+            background-color: #dc685a;
+        }
+        &.nought {
+            background-color: #ecaf4f;
+        }
+    }
+}
+
+.result-container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    
+    .result-text {
+        flex: 0 1 27%;
+        font-weight: bold;
+    }        
+    
+    .btn-restart {
+        display: inline-block;
+        border: none;
+        padding: 10px 15px;
+        margin: 0;
+        text-decoration: none;
+        background: #f44336;;
+        color: #ffffff;
+        font-size: 15px;
+        cursor: pointer;
+        text-align: center;
+        transition: background 250ms ease-in-out, 
+                    transform 150ms ease;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        &:hover,
+        &:focus {
+            background: #f11c0d;
+        }
+        &:active {
+            transform: scale(0.99);
+        }
+    } 
+}
+        
